@@ -113,7 +113,12 @@ if __name__ == "__main__":
 
         # insert following list data
         for following in followings:
-            insert_dict = {}
+            insert_dict = {'instaId': following}
+            sql = """INSERT INTO m_crawler_list(instaId)
+                    VALUES (%s)"""
+            cur.execute(sql, following)
+
+        db.commit()
 
     # elif args.mode in ["posts", "posts_full"]:
     #     arg_required("username")
