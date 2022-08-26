@@ -7,6 +7,8 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 
@@ -25,6 +27,7 @@ class Browser:
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("user-agent=" + UserAgent().random)
+        chrome_options.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
         self.driver = webdriver.Chrome(
             executable_path="%s/bin/chromedriver" % dir_path,
             service_args=service_args,
@@ -115,7 +118,7 @@ class Browser:
         following = []
 
         # images data
-        content = soup.select("div._aaep")
+        content = soup.select("div._ab8y._ab94._ab97._ab9f._ab9k._ab9p._abcm")
         # print(f"content : {len(content)}")
         for i in content:
             link = i.find("a")
