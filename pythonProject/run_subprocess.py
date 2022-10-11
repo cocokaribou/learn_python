@@ -41,7 +41,7 @@ def main():
     idx = 0
     while idx < 5:  # scroll 5 times
         did = idx % 3
-        print(f"index:{subprocess_open('python3 /Users/kwangbokchoi/python_sample/instagram-crawler-master/crawler.py following -u nice.english.sam -o ./output_following.txt -i '+ str(did))}")
+        print(f"index:{subprocess_open('python3 C:\Users\Youngin Lee\kleptomanie\2022\learn_python\instagram-crawler-master\crawler.py following -u nice.english.sam -o ./output_following.txt -i '+ str(did))}")
         idx += 1
 
     # print subprocess_open_when_shell_false("./test.sh")
